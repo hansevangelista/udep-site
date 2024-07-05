@@ -3,6 +3,38 @@
 </script>
 
 <template>
+  <details class="dropdown">
+    <summary class="btn m-1">open or close</summary>
+    <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+      <li><a>Item 1</a></li>
+      <li><a>Item 2</a></li>
+    </ul>
+  </details>
+
+  <ul class="menu lg:menu-horizontal bg-base-200 rounded-box lg:mb-64">
+    <li><a>Item 1</a></li>
+    <li>
+      <details open>
+        <summary>Parent item</summary>
+        <ul>
+          <li><a>Submenu 1</a></li>
+          <li><a>Submenu 2</a></li>
+          <li>
+            <details open>
+              <summary>Parent</summary>
+              <ul>
+                <li><a>item 1</a></li>
+                <li><a>item 2</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li><a>Item 3</a></li>
+  </ul>
+
+
   <div class="navbar bg-base-100">
     <div class="navbar-start">
       <div class="dropdown">
