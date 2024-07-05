@@ -35,7 +35,8 @@
           <li><a>Item 3</a></li>
         </ul>
       </details>
-      <a class="btn btn-ghost text-xl">daisyUI</a>
+
+      <img src="@/assets/logo.png" class="h-12">
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
