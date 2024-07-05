@@ -4,10 +4,10 @@
 
 <template>
 
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100 ur-header">
     <div class="navbar-start">
       <details class="dropdown">
-        <summary tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <summary tabindex="0" role="button" class="btn btn-ghost lg:hidden ur-burguer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -36,7 +36,7 @@
         </ul>
       </details>
 
-      <img src="@/assets/logo.png" class="h-12">
+      <img src="@/assets/logo.png" class="h-12 lg:h-16">
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
