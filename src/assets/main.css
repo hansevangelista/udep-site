@@ -47,3 +47,12 @@ body {
     padding-left: 0;
     color: #F9FAFB;
 }
+
+.ur-hero {
+    background-image: url('back.png');
+}
+.ur-hero-inner {
+    margin: auto;
+    max-width: 1300px;
+    width: 100%;
+}

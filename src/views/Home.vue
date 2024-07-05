@@ -58,18 +58,21 @@
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen">
-    <div class="hero-content flex-col lg:flex-row">
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-        class="max-w-sm rounded-lg shadow-2xl" />
-      <div>
-        <h1 class="text-5xl font-bold">Box Office News!</h1>
+  <div class="hero bg-base-200 min-h-screen ur-hero" style="place-items: normal;">
+    <div class="hero-content flex-col lg:flex-row ur-hero-inner" style="justify-content: flex-start;">
+
+      <div style="max-width: 746px;">
+        <p class="py-6">
+          Compite en nuestro emocionante juego
+        </p>
+        <img src="@/assets/logo-big.png" style="max-width: 500px; width: 100%;">
         <p class="py-6">
           Experimienta una carrera y conoce el universo de la universidad de Piura. Un reto basado en tus habilidades para sortear los obstáculos de tu carrera universitaria y participa por emocionantes premios
         </p>
         <button class="btn btn-primary">Jugar Ahora</button>
       </div>
+
+      <img src="@/assets/persons.png" class="hidden lg:block" style="max-width: 672px;" />
     </div>
   </div>
 
