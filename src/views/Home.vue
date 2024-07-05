@@ -88,7 +88,7 @@
     </div>
   </div>
 
-  <!-- <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100">
     <div class="navbar-start">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -139,7 +139,7 @@
     <div class="navbar-end">
       <a class="btn btn-neutral">JUGAR</a>
     </div>
-  </div> -->
+  </div>
 
   <div class="hero bg-base-200 min-h-screen">
     <div class="hero-content flex-col lg:flex-row">
