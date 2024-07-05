@@ -1,6 +1,6 @@
 @font-face {
     font-family: burbankbigcondensed;
-    src: url("fonts/burbankbigcondensed_black.otf") format("opentype");
+    src: url("fonts/burbankbigcondensed_bold.otf") format("opentype");
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
