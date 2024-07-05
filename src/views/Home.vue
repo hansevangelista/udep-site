@@ -4,6 +4,14 @@
 
 <template>
 
+  <button class="btn">Button</button>
+  <button class="btn btn-neutral">Neutral</button>
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-accent">Accent</button>
+  <button class="btn btn-ghost">Ghost</button>
+  <button class="btn btn-link">Link</button>
+
   <div class="navbar bg-base-100">
     <div class="navbar-start">
       <div class="dropdown">
@@ -53,7 +61,7 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn">Button</a>
+      <a class="btn btn-neutral">JUGAR</a>
     </div>
   </div>
 
@@ -65,10 +73,9 @@
       <div>
         <h1 class="text-5xl font-bold">Box Office News!</h1>
         <p class="py-6">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
+          Experimienta una carrera y conoce el universo de la universidad de Piura. Un reto basado en tus habilidades para sortear los obstáculos de tu carrera universitaria y participa por emocionantes premios
         </p>
-        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-primary">Jugar Ahora</button>
       </div>
     </div>
   </div>
@@ -84,7 +91,7 @@
           Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
           quasi. In deleniti eaque aut repudiandae et a id nisi.
         </p>
-        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-neutral">Jugar</button>
       </div>
     </div>
   </div>
@@ -100,7 +107,7 @@
           Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
           quasi. In deleniti eaque aut repudiandae et a id nisi.
         </p>
-        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-neutral">Jugar Ahora</button>
       </div>
     </div>
   </div>
