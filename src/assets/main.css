@@ -17,8 +17,7 @@ body {
 .btn {
   font-family: 'burbankbigcondensed', serif;
   letter-spacing: 1.5px;
-  font-size: 24px;
-  padding: 0 36px;
+  padding: 0 40px;
   border-radius: 0;
   border: none;
 }
@@ -40,11 +39,15 @@ body {
   color: #21294C;
 }
 
-
-.ur-header {
+.ur-header-wrapper {
     background: #3584E5;
     position: fixed;
     z-index: 1;
+    width: 100%;
+}
+.ur-header {
+    max-width: 1280px;
+    margin: auto;
 }
 
 .ur-burguer {

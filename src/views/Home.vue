@@ -4,10 +4,12 @@
 
 <template>
 
-  <div class="navbar bg-base-100 ur-header">
+<div class="ur-header-wrapper">
+
+  <div class="navbar ur-header">
     <div class="navbar-start">
       <details class="dropdown">
-        <summary tabindex="0" role="button" class="btn btn-ghost lg:hidden ur-burguer">
+        <summary tabindex="0" role="button" class="btn btn-ghost md:hidden ur-burguer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -30,9 +32,9 @@
         </ul>
       </details>
 
-      <img src="@/assets/logo.png" class="h-12 lg:h-16">
+      <img src="@/assets/logo.png" class="h-12 md:h-14 lg:h-16">
     </div>
-    <div class="navbar-center hidden lg:flex">
+    <div class="navbar-center hidden md:flex">
       <ul class="menu menu-horizontal px-1" style="color: #fff; font-size: 16px; font-weight: bold;">
         <li><a>Home</a></li>
         <li><a>Premios</a></li>
@@ -40,27 +42,28 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <a class="btn btn-neutral">JUGAR</a>
+      <a class="btn btn-neutral text-xl lg:text-2xl">JUGAR</a>
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen ur-hero" style="place-items: normal;">
-    <div class="hero-content flex-col lg:flex-row ur-hero-inner" style="justify-content: flex-start;">
+</div>
 
-      <div style="max-width: 746px;">
-        <img src="@/assets/computer.png" class="w-6">
-        <p class="py-6 text-lg" style="color: #F3F4F6;">
+  <div class="hero bg-base-200 min-h-screen ur-hero" style="place-items: normal;">
+    <div class="hero-content flex-col md:flex-row ur-hero-inner" style="justify-content: flex-start;">
+      <div style="max-width: 746px; flex: 1;">
+        <img src="@/assets/computer.png" class="w-4 md:w-6">
+        <p class="py-4 text-lg md:text-xl" style="color: #F3F4F6;">
           Compite en nuestro emocionante juego
         </p>
-        <img src="@/assets/logo-big.png" class="w-48">
-        <p class="py-6 text-base" style="color: #F3F4F6;">
-          Experimienta una carrera y conoce el universo de la universidad de Piura. Un reto basado en tus habilidades para sortear los obstáculos de tu carrera universitaria y participa por emocionantes premios
+        <img src="@/assets/logo-big.png" class="w-40 py-2 mx-auto md:mx-0 md:w-60 lg:w-80">
+        <p class="py-6 text-base md:text-lg" style="color: #F3F4F6;">
+          Experimienta una carrera y conoce el universo de la universidad de Piura. Un reto basado en tus habilidades para sortear los obstáculos de tu carrera universitaria y participa por emocionantes premios
         </p>
-        <br>
-        <button class="btn btn-primary">Jugar Ahora</button>
+        <button class="btn btn-primary text-xl mt-2 lg:text-2xl">Jugar Ahora</button>
       </div>
-
-      <img src="@/assets/persons.png" class="hidden lg:block" style="max-width: 672px;" />
+      <div style="flex: 1;">
+        <img src="@/assets/persons.png" class="hidden md:block" style="width: 100%;" />
+      </div>
     </div>
   </div>
 
