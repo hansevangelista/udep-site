@@ -62,13 +62,15 @@
     <div class="hero-content flex-col lg:flex-row ur-hero-inner" style="justify-content: flex-start;">
 
       <div style="max-width: 746px;">
-        <p class="py-6">
+        <img src="@/assets/computer.png" style="width: 30px;">
+        <p class="py-6" style="color: #F3F4F6; font-size: 22px;">
           Compite en nuestro emocionante juego
         </p>
-        <img src="@/assets/logo-big.png" style="max-width: 500px; width: 100%;">
-        <p class="py-6">
+        <img src="@/assets/logo-big.png" style="max-width: 400px; width: 100%;">
+        <p class="py-6" style="color: #F3F4F6; font-size: 20px;">
           Experimienta una carrera y conoce el universo de la universidad de Piura. Un reto basado en tus habilidades para sortear los obstáculos de tu carrera universitaria y participa por emocionantes premios
         </p>
+        <br>
         <button class="btn btn-primary">Jugar Ahora</button>
       </div>
 
