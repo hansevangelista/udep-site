@@ -4,49 +4,47 @@
 
 <template>
 
-<div class="ur-header-wrapper">
+  <div class="ur-header-wrapper">
+    <div class="navbar ur-header">
+      <div class="navbar-start">
+        <details class="dropdown">
+          <summary tabindex="0" role="button" class="btn btn-ghost md:hidden ur-burguer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </summary>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <li><a>Home</a></li>
+            <li><a>Premios</a></li>
+            <li><a>Ranking</a></li>
+          </ul>
+        </details>
 
-  <div class="navbar ur-header">
-    <div class="navbar-start">
-      <details class="dropdown">
-        <summary tabindex="0" role="button" class="btn btn-ghost md:hidden ur-burguer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16" />
-          </svg>
-        </summary>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        <img src="@/assets/logo.png" class="h-12 md:h-14 lg:h-16">
+      </div>
+      <div class="navbar-center hidden md:flex">
+        <ul class="menu menu-horizontal px-1" style="color: #fff; font-size: 16px; font-weight: bold;">
           <li><a>Home</a></li>
           <li><a>Premios</a></li>
           <li><a>Ranking</a></li>
         </ul>
-      </details>
-
-      <img src="@/assets/logo.png" class="h-12 md:h-14 lg:h-16">
-    </div>
-    <div class="navbar-center hidden md:flex">
-      <ul class="menu menu-horizontal px-1" style="color: #fff; font-size: 16px; font-weight: bold;">
-        <li><a>Home</a></li>
-        <li><a>Premios</a></li>
-        <li><a>Ranking</a></li>
-      </ul>
-    </div>
-    <div class="navbar-end">
-      <a class="btn btn-neutral text-xl lg:text-2xl">JUGAR</a>
+      </div>
+      <div class="navbar-end">
+        <a class="btn btn-neutral text-xl lg:text-2xl">JUGAR</a>
+      </div>
     </div>
   </div>
-
-</div>
 
   <div class="hero bg-base-200 min-h-screen ur-hero" style="place-items: normal;">
     <div class="hero-content flex-col md:flex-row ur-hero-inner" style="justify-content: flex-start;">
@@ -67,55 +65,46 @@
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen">
-    <div class="hero-content flex-col lg:flex-row-reverse">
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-        class="max-w-sm rounded-lg shadow-2xl" />
-      <div>
-        <h1 class="text-5xl font-bold">Box Office News!</h1>
-        <p class="py-6">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
+  <div class="hero my-20 md:my-32 ur-hero2-wrapper">
+    <div class="hero-content flex-col lg:flex-row-reverse ur-hero2">
+      <div style="flex: 1;">
+        <img
+          src="@/assets/persons2.png" class="" style="width: 100%;" />
+      </div>
+      <div style="flex: 1;">
+        <h1 class="text-5xl font-bold ur-hero2-title" style="color: #F3F4F6;">PARTICIPA POR EMOCIONANTES PREMIOS</h1>
+        <p class="py-6" style="color: #F3F4F6;">
+          Suba de nível e resgate recompensas! Procurando o Pacotão de Batalha? Adicione 25 níveis ao seu Passe de Batalha a qualquer momento!
         </p>
-        <button class="btn btn-neutral">Jugar</button>
+        <button class="btn btn-neutral text-xl lg:text-2xl">Jugar</button>
       </div>
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen">
-    <div class="hero-content flex-col lg:flex-row">
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-        class="max-w-sm rounded-lg shadow-2xl" />
-      <div>
-        <h1 class="text-5xl font-bold">Box Office News!</h1>
-        <p class="py-6">
-          Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-          quasi. In deleniti eaque aut repudiandae et a id nisi.
-        </p>
-        <button class="btn btn-neutral">Jugar Ahora</button>
+  <div class="hero bg-base-200">
+    <div class="hero-content flex-col lg:flex-row" style="max-width: 100%; padding: 0;">
+      <div style="flex: 1;">
+        <div style="max-width: 600px; margin-left: 0; float: right; padding: 20px;">
+          <h1 class="text-5xl font-bold ur-hero3-title">juega individual o con amigos</h1>
+          <p class="py-6">
+            Compite contra tu propio tiempo, o con amigos para hacerlo más divertido
+          </p>
+          <button class="btn btn-neutral text-xl lg:text-2xl">Jugar Ahora</button>
+        </div>
+      </div>
+      <div style="background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%); flex: 1;">
+        <img
+          src="@/assets/persons3.png"
+          class="pt-20" />
       </div>
     </div>
   </div>
 
-  <footer class="footer bg-neutral text-neutral-content p-10">
+  <footer class="footer bg-neutral text-neutral-content p-10 ur-footer">
     <aside>
-      <svg
-        width="50"
-        height="50"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        class="fill-current">
-        <path
-          d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path>
-      </svg>
+      <img src="@/assets/logo.png" class="h-12 md:h-14 lg:h-16">
       <p>
-        ACME Industries Ltd.
-        <br />
-        Providing reliable tech since 1992
+        Proyecto por la universidad de Piura
       </p>
     </aside>
     <nav>

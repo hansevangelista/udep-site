@@ -64,3 +64,20 @@ body {
     max-width: 1300px;
     width: 100%;
 }
+
+.ur-hero2 {
+  background: #3584E5;
+}
+
+.ur-hero2-title {
+  font-family: 'burbankbigcondensed', serif;
+}
+
+.ur-hero3-title {
+  font-family: 'burbankbigcondensed', serif;
+  text-transform: uppercase;
+}
+
+.ur-footer {
+  background: #3584E5;
+}
