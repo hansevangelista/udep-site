@@ -83,6 +83,17 @@ body {
   bottom: -22px;
   right: -5px;
 }
+.ur-hero2::before {
+  content: "";
+  position: absolute;
+  border-left: 32px solid white;
+  border-top: 32px solid transparent;
+  border-bottom: 32px solid transparent;
+  z-index: 1000;
+  transform: rotate(-135deg);
+  left: -5px;
+  top: -22px;
+}
 
 .ur-hero2-title {
   font-family: 'burbankbigcondensed', serif;
