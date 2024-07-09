@@ -60,7 +60,7 @@
         <RouterLink class="btn btn-primary text-xl mt-2 lg:text-2xl" to="/play">Jugar Ahora</RouterLink>
       </div>
       <div style="flex: 1;">
-        <img src="@/assets/persons.png" class="hidden md:block" style="width: 100%;" />
+        <!-- <img src="@/assets/persons.png" class="hidden md:block" style="width: 100%;" /> -->
       </div>
     </div>
   </div>
