@@ -31,7 +31,9 @@
           </ul>
         </details>
 
-        <img src="@/assets/logo.png" class="h-12 md:h-14 lg:h-16">
+        <RouterLink to="/">
+          <img src="@/assets/logo.png" class="h-12 md:h-14 lg:h-16">
+        </RouterLink>
       </div>
       <div class="navbar-center hidden md:flex">
         <ul class="menu menu-horizontal px-1" style="color: #fff; font-size: 16px; font-weight: bold;">
@@ -46,58 +48,8 @@
     </div>
   </div>
 
-  <div class="hero bg-base-200 min-h-screen ur-hero" style="place-items: normal;">
-    <div class="hero-content flex-col md:flex-row ur-hero-inner" style="justify-content: flex-start;">
-      <div style="max-width: 746px; flex: 1;">
-        <img src="@/assets/computer.png" class="w-4 md:w-6">
-        <p class="py-4 text-lg md:text-xl" style="color: #F3F4F6;">
-          Compite en nuestro emocionante juego
-        </p>
-        <img src="@/assets/logo-big.png" class="w-40 py-2 mx-auto md:mx-0 md:w-60 lg:w-80">
-        <p class="py-6 text-base md:text-lg" style="color: #F3F4F6;">
-          Experimienta una carrera y conoce el universo de la universidad de Piura. Un reto basado en tus habilidades para sortear los obstáculos de tu carrera universitaria y participa por emocionantes premios
-        </p>
-        <RouterLink class="btn btn-primary text-xl mt-2 lg:text-2xl" to="/play">Jugar Ahora</RouterLink>
-      </div>
-      <div style="flex: 1;">
-        <img src="@/assets/persons.png" class="hidden md:block" style="width: 100%;" />
-      </div>
-    </div>
-  </div>
-
-  <div class="hero my-20 md:my-32 ur-hero2-wrapper">
-    <div class="hero-content flex-col lg:flex-row-reverse ur-hero2 md:py-8 lg:px-20">
-      <div style="flex: 1;">
-        <img
-          src="@/assets/persons2.png" class="" style="width: 100%;" />
-      </div>
-      <div style="flex: 1;">
-        <h1 class="text-5xl font-bold ur-hero2-title" style="color: #F3F4F6;">PARTICIPA POR EMOCIONANTES PREMIOS</h1>
-        <p class="py-6" style="color: #F3F4F6;">
-          Suba de nível e resgate recompensas! Procurando o Pacotão de Batalha? Adicione 25 níveis ao seu Passe de Batalha a qualquer momento!
-        </p>
-        <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">Jugar</RouterLink>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero bg-base-200">
-    <div class="hero-content flex-col lg:flex-row" style="max-width: 100%; padding: 0;">
-      <div style="flex: 1;">
-        <div style="max-width: 600px; margin-left: 0; float: right; padding: 20px;">
-          <h1 class="text-5xl font-bold ur-hero3-title">juega individual o con amigos</h1>
-          <p class="py-6">
-            Compite contra tu propio tiempo, o con amigos para hacerlo más divertido
-          </p>
-          <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">Jugar Ahora</RouterLink>
-        </div>
-      </div>
-      <div style="background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%); flex: 1;">
-        <img
-          src="@/assets/persons3.png"
-          class="pt-20" />
-      </div>
-    </div>
+  <div style="background: #000;">
+    <iframe src="https://www.spatial.io/embed/UDEP-Race-665645a0311b7a214398dd5b?share=5898297976289270910" width="1280px" height="720px" allow="camera; fullscreen; autoplay; display-capture; microphone; clipboard-write" style="margin: auto;"></iframe>
   </div>
 
   <footer class="footer bg-neutral text-neutral-content p-10 ur-footer">
