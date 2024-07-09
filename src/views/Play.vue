@@ -49,7 +49,7 @@
   </div>
 
   <div style="background: #000; padding-top: 80px;">
-    <iframe src="https://www.spatial.io/embed/UDEP-Race-665645a0311b7a214398dd5b?share=5898297976289270910" width="1280px" height="720px" allow="camera; fullscreen; autoplay; display-capture; microphone; clipboard-write" style="margin: auto;"></iframe>
+    <iframe src="https://www.spatial.io/embed/UDEP-Race-665645a0311b7a214398dd5b?share=5898297976289270910" allow="camera; fullscreen; autoplay; display-capture; microphone; clipboard-write" style="margin: auto; width: 100%;"></iframe>
   </div>
 
   <footer class="footer bg-neutral text-neutral-content p-10 ur-footer">

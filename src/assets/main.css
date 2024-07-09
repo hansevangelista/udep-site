@@ -96,3 +96,14 @@ body {
 .ur-footer {
   background: #3584E5;
 }
+
+iframe {
+  height: 500px;
+}
+
+
+@media (min-width: 1250px) {
+  iframe {
+    height: 720px;
+  }
+}
