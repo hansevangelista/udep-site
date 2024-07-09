@@ -67,6 +67,20 @@ body {
 
 .ur-hero2 {
   background: #3584E5;
+  position: relative;
+  overflow: hidden;
+}
+
+.ur-hero2::after {
+  content: "";
+  position: absolute;
+  border-left: 32px solid white;
+  border-top: 32px solid transparent;
+  border-bottom: 32px solid transparent;
+  z-index: 1000;
+  transform: rotate(45deg);
+  bottom: -22px;
+  right: -5px;
 }
 
 .ur-hero2-title {
