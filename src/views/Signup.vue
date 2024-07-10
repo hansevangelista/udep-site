@@ -94,6 +94,24 @@
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Ciudad de Colegio</label>
             <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="ejem. Lima" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required />
           </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Año de Egreso</label>
+            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <option selected>.</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+              </select>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Password</label>
+            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required />
+          </div>
+
+
         </div>
 
         <div class="flex items-start">
