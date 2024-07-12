@@ -1,5 +1,50 @@
 <script setup>
-// import TheWelcome from '../components/TheWelcome.vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+
+const router = useRouter()
+
+const email = ref(null)
+const name = ref(null)
+const phone = ref(null)
+const dni = ref(null)
+const school = ref(null)
+const city = ref(null)
+const year = ref(null)
+const password = ref(null)
+
+async function submit() {
+  console.log('submit ...')
+
+  const data = {
+    email: email.value,
+    name: name.value,
+    phone: phone.value,
+    dni: dni.value,
+    school: school.value,
+    city: city.value,
+    year: year.value,
+    password: password.value,
+  }
+  console.log({ data })
+
+  const url = import.meta.env.VITE_SERVER + '/api/signup'
+
+  const res = await fetch(url, {
+                      method: "POST", // or 'PUT'
+                      body: JSON.stringify(data), // data can be `string` or {object}!
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                    })
+                    .then((res) => res.json())
+  console.log({ res })
+
+  localStorage.setItem("token", res.token)
+
+  router.push('/play')
+}
 </script>
 
 <template>
@@ -59,7 +104,8 @@
         </h1>
 
         <p class="text-sm font-light text-gray-500">
-          Ya tienes una cuenta? <a href="#" class="font-medium text-primary hover:underline">Ingresa aquí</a>
+          Ya tienes una cuenta?
+          <RouterLink to="/login" class="font-medium text-primary hover:underline">Ingresa aquí</RouterLink>
         </p>
 
         <br>
@@ -67,37 +113,37 @@
         <div class="mb-6 grid grid-cols-2 gap-4">
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Email</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required />
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required v-model="email"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Nombre y Apellido</label>
-            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu nombre y apellido" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required />
+            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu nombre y apellido" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="name"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Celular</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu celular" required />
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu celular" required v-model="phone"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">DNI</label>
-            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu DNI" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required />
+            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu DNI" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="dni"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Colegio</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Nombre del colegio" required />
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Nombre del colegio" required v-model="school"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Ciudad de Colegio</label>
-            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="ejem. Lima" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required />
+            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="ejem. Lima" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="city"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Año de Egreso</label>
-            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" v-model="year">
                 <option selected>.</option>
                 <option value="2024">2024</option>
                 <option value="2025">2025</option>
@@ -108,7 +154,7 @@
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Password</label>
-            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required />
+            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="password"/>
           </div>
 
 
@@ -125,7 +171,7 @@
 
         <br>
 
-        <button type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">Crear cuenta</button>
+        <button type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" @click="submit">Crear cuenta</button>
       </div>
 
       <div class="mt-6 grow sm:mt-8 lg:mt-0" style="flex: 1; background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%);">

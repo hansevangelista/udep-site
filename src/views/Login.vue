@@ -1,41 +1,40 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 
 const router = useRouter()
 
-const token = localStorage.getItem("token")
+const email = ref(null)
+const password = ref(null)
 
-if(!token) {
-  router.push('/signup')
-}
+async function submit() {
+  console.log('submit ...')
 
-const user = ref({ name: '' })
+  const data = {
+    email: email.value,
+    password: password.value,
+  }
+  console.log({ data })
 
-onMounted(() => {
-  main()
-})
+  const url = import.meta.env.VITE_SERVER + '/api/login'
 
-async function main() {
-  console.log('main ...')
-
-  const url = import.meta.env.VITE_SERVER + '/api/play?token=' + token
-
-  const res = await fetch(url)
+  const res = await fetch(url, {
+                      method: "POST",
+                      body: JSON.stringify(data),
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                    })
                     .then((res) => res.json())
   console.log({ res })
 
-  user.value = res.user
+  if(res.error) return
+
+  localStorage.setItem("token", res.token)
+
+  router.push('/play')
 }
-
-function logout() {
-  console.log('logout ...')
-
-  localStorage.removeItem("token")
-  router.push('/signup')
-}
-
 </script>
 
 <template>
@@ -64,7 +63,6 @@ function logout() {
             <li><a>Home</a></li>
             <li><a>Premios</a></li>
             <li><a>Ranking</a></li>
-            <li><a @click="logout">Cerrar sesión</a></li>
           </ul>
         </details>
 
@@ -77,20 +75,53 @@ function logout() {
           <li><a>Home</a></li>
           <li><a>Premios</a></li>
           <li><a>Ranking</a></li>
-          <li><a @click="logout">Cerrar sesión</a></li>
         </ul>
       </div>
       <div class="navbar-end">
-        <!-- <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">JUGAR</RouterLink> -->
-
-        <button class="btn btn-neutral text-xl lg:text-2xl">{{ user.name }}</button>
+        <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">JUGAR</RouterLink>
       </div>
     </div>
   </div>
 
-  <div style="background: #000; padding-top: 80px;">
-    <iframe src="https://www.spatial.io/embed/UDEP-Race-665645a0311b7a214398dd5b?share=5898297976289270910" allow="camera; fullscreen; autoplay; display-capture; microphone; clipboard-write" style="margin: auto; width: 100%;"></iframe>
-  </div>
+  <section class="pt-20 p-4 antialiased md:pt-32 md:p-8 lg:pt-32 lg:p-10" style="background: #E5E7EB;">
+
+    <div class="lg:flex">
+
+      <div class="p-4 bg-white md:p-8" style="flex: 1;">
+
+        <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl">
+          Ingresa a UDEP Race
+        </h1>
+
+        <p class="text-sm font-light text-gray-500">
+          Todavía no tienes cuenta?
+          <RouterLink to="/signup" class="font-medium text-primary hover:underline">Regístrate aquí</RouterLink>
+        </p>
+
+        <br>
+
+        <div class="mb-6 grid grid-cols-2 gap-4">
+          <div class="col-span-2 sm:col-span-1">
+            <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Email</label>
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required v-model="email"/>
+          </div>
+          <div class="col-span-2 sm:col-span-1">
+            <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Password</label>
+            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="password"/>
+          </div>
+        </div>
+
+        <button type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" @click="submit">Ingresar</button>
+      </div>
+
+      <div class="mt-6 grow sm:mt-8 lg:mt-0" style="flex: 1; background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%);">
+        <img
+          src="@/assets/persons3.png"
+          class="pt-20" />
+      </div>
+    </div>
+
+  </section>
 
   <footer class="footer bg-neutral text-neutral-content p-10 ur-footer">
     <aside>
