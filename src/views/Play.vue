@@ -6,6 +6,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const token = localStorage.getItem("token")
+console.log({ token })
 
 if(!token) {
   router.push('/signup')
