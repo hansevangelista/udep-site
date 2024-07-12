@@ -33,7 +33,7 @@ async function submit() {
 
   localStorage.setItem("token", res.token)
 
-  // router.push('/play')
+  router.push('/play')
 }
 </script>
 
