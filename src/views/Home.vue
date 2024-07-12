@@ -74,7 +74,7 @@
       <div style="flex: 1;">
         <h1 class="text-5xl font-bold ur-hero2-title" style="color: #F3F4F6;">PARTICIPA POR EMOCIONANTES PREMIOS</h1>
         <p class="py-6" style="color: #F3F4F6;">
-          Suba de nível e resgate recompensas! Procurando o Pacotão de Batalha? Adicione 25 níveis ao seu Passe de Batalha a qualquer momento!
+          Participa por una asesoría vocacional personalizada. Y comienza tu aventura de tu carrera profesional de la mano de especialistas. Son 50 mejores los ganadores.
         </p>
         <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">Jugar</RouterLink>
       </div>
