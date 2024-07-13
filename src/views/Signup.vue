@@ -13,9 +13,30 @@ const school = ref(null)
 const city = ref(null)
 const year = ref(null)
 const password = ref(null)
+const terms = ref(null)
+
+const error = ref(null)
+const sending = ref(false)
+
+
+function reset() {
+  console.log('reset ...')
+  error.value = false
+}
 
 async function submit() {
   console.log('submit ...')
+
+  if(!email.value) return error.value = 'ingresa email'
+  if(!name.value) return error.value = 'ingresa nombre'
+  if(!phone.value) return error.value = 'ingresa teléfono'
+  if(!dni.value) return error.value = 'ingresa dni'
+  if(!school.value) return error.value = 'ingresa escuela'
+  if(!city.value) return error.value = 'ingresa ciudad'
+  if(!year.value) return error.value = 'ingresa año'
+  if(!password.value) return error.value = 'ingresa password'
+  if(!terms.value) return error.value = 'aceptar términos'
+
 
   const data = {
     email: email.value,
@@ -31,6 +52,8 @@ async function submit() {
 
   const url = import.meta.env.VITE_SERVER + '/api/signup'
 
+  sending.value = true
+
   const res = await fetch(url, {
                       method: "POST", // or 'PUT'
                       body: JSON.stringify(data), // data can be `string` or {object}!
@@ -40,6 +63,8 @@ async function submit() {
                     })
                     .then((res) => res.json())
   console.log({ res })
+
+  sending.value = false
 
   localStorage.setItem("token", res.token)
 
@@ -113,37 +138,37 @@ async function submit() {
         <div class="mb-6 grid grid-cols-2 gap-4">
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Email</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required v-model="email"/>
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required v-model="email" @keyup="reset"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Nombre y Apellido</label>
-            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu nombre y apellido" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="name"/>
+            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu nombre y apellido" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="name" @keyup="reset"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Celular</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu celular" required v-model="phone"/>
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu celular" required v-model="phone" @keyup="reset"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">DNI</label>
-            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu DNI" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="dni"/>
+            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Ingresa tu DNI" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="dni" @keyup="reset"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Colegio</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Nombre del colegio" required v-model="school"/>
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="Nombre del colegio" required v-model="school" @keyup="reset"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Ciudad de Colegio</label>
-            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="ejem. Lima" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="city"/>
+            <input type="text" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="ejem. Lima" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="city" @keyup="reset"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Año de Egreso</label>
-            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" v-model="year">
+            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" v-model="year" @change="reset">
                 <option selected>.</option>
                 <option value="2024">2024</option>
                 <option value="2025">2025</option>
@@ -154,7 +179,7 @@ async function submit() {
 
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Password</label>
-            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="password"/>
+            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="password" @keyup="reset"/>
           </div>
 
 
@@ -162,7 +187,7 @@ async function submit() {
 
         <div class="flex items-start">
           <div class="flex items-center h-5">
-            <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" required="">
+            <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" required="" v-model="terms" @keyup="reset">
           </div>
           <div class="ml-3 text-sm">
             <label for="terms" class="font-light text-gray-500">Al registrarme acepto los <a class="font-medium text-primary hover:underline" href="#">Términos y condiciones</a></label>
@@ -171,7 +196,11 @@ async function submit() {
 
         <br>
 
-        <button type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" @click="submit">Crear cuenta</button>
+        <small style="color: red;" v-if="error">{{ error }} <br><br></small>
+
+        <button v-if="!sending" type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" @click="submit">Crear cuenta</button>
+
+        <button v-if="sending" type="submit" class="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" disabled style="background: #ccc;">Crear cuenta</button>
       </div>
 
       <div class="mt-6 grow sm:mt-8 lg:mt-0" style="flex: 1; background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%);">
