@@ -118,6 +118,6 @@ iframe {
     height: 720px;
   }
   .ur-footer {
-    min-height: 300px;
+    /* min-height: 200px; */
   }
 }
