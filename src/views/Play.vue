@@ -37,6 +37,46 @@ function logout() {
   router.push('/signup')
 }
 
+const username = ref(null)
+const sending = ref(false)
+const error = ref(null)
+
+async function submit() {
+  console.log('submit ...')
+
+  if(!username.value) return error.value = 'ingrese username'
+
+
+  const data = {
+    id: user.value.id,
+    username: username.value,
+  }
+  console.log({ data })
+
+  const url = import.meta.env.VITE_SERVER + '/api/play'
+
+  sending.value = true
+
+  const res = await fetch(url, {
+                      method: "POST",
+                      body: JSON.stringify(data),
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                    })
+                    .then((res) => res.json())
+  console.log({ res })
+
+  sending.value = false
+
+  user.value.username = username.value
+}
+
+function reset() {
+  console.log('reset ...')
+  error.value = false
+}
+
 </script>
 
 <template>
@@ -98,17 +138,27 @@ function logout() {
         <div class="mx-auto max-w-screen-md sm:text-center">
             <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Para participar de los premios registra tu usuario de Spatial</h2>
             <p class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl">Registra tu usuario de Spatial para poder participar formalmente de UDEP Race y la puedes encontrar aquí</p>
-            <form action="#">
-                <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+            <div>
+                <div v-if="user.username">
+                  <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+                    {{ user.username }}
+                  </h2>
+                </div>
+
+                <small style="color: red;" v-if="error">{{ error }}</small>
+
+                <div v-if="!user.username" class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                     <div class="relative w-full">
-                        <input class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500" placeholder="spatial.io/@username" type="email" id="email" required="">
+                        <input class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500" placeholder="spatial.io/@username" type="email" id="email" required="" v-model="username" @keyup="reset">
                     </div>
                     <div>
-                        <button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary border-primary sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300">Subscribe</button>
+                        <button v-if="!sending" type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary border-primary sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300" @click="submit">Subscribe</button>
+
+                        <button v-if="sending" type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300" disabled style="background: #ccc;">Subscribe</button>
                     </div>
                 </div>
-                <div class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">Copia el link de tu username de spatial</div>
-            </form>
+                <div v-if="!user.username" class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">Copia el link de tu username de spatial</div>
+            </div>
         </div>
     </div>
   </section>
