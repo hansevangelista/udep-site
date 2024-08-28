@@ -1,59 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-
-
-const router = useRouter()
-
-const email = ref(null)
-const password = ref(null)
-
-const error = ref(null)
-const sending = ref(false)
-
-
-function reset() {
-  console.log('reset ...')
-  error.value = false
-}
-
-async function submit() {
-  console.log('submit ...')
-
-  if(!email.value) return error.value = 'ingresa email'
-  if(!password.value) return error.value = 'ingresa password'
-
-
-  const data = {
-    email: email.value,
-    password: password.value,
-  }
-  console.log({ data })
-
-  const url = import.meta.env.VITE_SERVER + '/api/login'
-
-  sending.value = true
-
-  const res = await fetch(url, {
-                      method: "POST",
-                      body: JSON.stringify(data),
-                      headers: {
-                        "Content-Type": "application/json",
-                      },
-                    })
-                    .then((res) => res.json())
-  console.log({ res })
-
-  sending.value = false
-
-  if(res.error) return
-
-  localStorage.setItem("token", res.token)
-
-  router.push('/play')
-}
-</script>
-
 <template>
 
   <div class="ur-header-wrapper">
@@ -102,45 +46,7 @@ async function submit() {
 
   <section class="pt-20 p-4 antialiased md:pt-32 md:p-8 lg:pt-32 lg:p-10" style="background: #E5E7EB;">
 
-    <div class="lg:flex">
-
-      <div class="p-4 bg-white md:p-8" style="flex: 1;">
-
-        <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl">
-          Ingresa a UDEP Race
-        </h1>
-
-        <p class="text-sm font-light text-gray-500">
-          Todavía no tienes cuenta?
-          <RouterLink to="/signup" class="font-medium text-primary hover:underline">Regístrate aquí</RouterLink>
-        </p>
-
-        <br>
-
-        <div class="mb-6 grid grid-cols-2 gap-4">
-          <div class="col-span-2 sm:col-span-1">
-            <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Email</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required v-model="email" @keyup="reset"/>
-          </div>
-          <div class="col-span-2 sm:col-span-1">
-            <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Password</label>
-            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="password" @keyup="reset"/>
-          </div>
-        </div>
-
-        <small style="color: red;" v-if="error">{{ error }} <br><br></small>
-
-        <button v-if="!sending" type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" @click="submit">Ingresar</button>
-
-        <button v-if="sending" type="submit" class="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" disabled style="background: #ccc;">Ingresar</button>
-      </div>
-
-      <div class="mt-6 grow sm:mt-8 lg:mt-0" style="flex: 1; background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%);">
-        <img
-          src="@/assets/persons3.png"
-          class="pt-20" />
-      </div>
-    </div>
+    Terms
 
   </section>
 
@@ -154,7 +60,7 @@ async function submit() {
     <nav>
       <h6 class="footer-title">Social</h6>
       <div class="grid grid-flow-col gap-4">
-        <a href="https://x.com/UdepConecta">
+        <a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -165,7 +71,7 @@ async function submit() {
               d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
           </svg>
         </a>
-        <!-- <a>
+        <a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -175,8 +81,8 @@ async function submit() {
             <path
               d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
           </svg>
-        </a> -->
-        <a href="https://www.facebook.com/udepconecta">
+        </a>
+        <a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

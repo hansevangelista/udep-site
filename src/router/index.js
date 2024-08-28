@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Play from '../views/Play.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
+import Terms from '../views/Terms.vue'
 
 
 const router = createRouter({
@@ -23,6 +24,10 @@ const router = createRouter({
     {
       path: '/login',
       component: Login
+    },
+    {
+      path: '/terms',
+      component: Terms
     },
   ]
 })
