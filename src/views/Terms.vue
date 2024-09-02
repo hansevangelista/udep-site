@@ -45,9 +45,17 @@
   </div>
 
   <section class="pt-20 p-4 antialiased md:pt-32 md:p-8 lg:pt-32 lg:p-10" style="background: #E5E7EB;">
-
-    Terms
-
+    <h1>PROTECCIÓN DE DATOS PERSONALES:</h1>
+    <br> <br>
+    De acuerdo a la Ley N° 29733, Ley de Protección de Datos Personales y su Reglamento, declaro haber sido informado por la Universidad de Piura (LA UNIVERSIDAD) con RUC N° 20172627421 y domicilio legal en Av. Ramon Múgica N° 131 Urb. San Eduardo (Sector El Chipe) del departamento, provincia y distrito de Piura, y autorizo que mis datos personales consignados en el presente formulario, así como los que se obtengan en virtud de mi relación con LA UNIVERSIDAD, incluida mi imagen, voz, firma, firma electrónica y huellas dactilares, sean almacenados en los Bancos de Datos de LA UNIVERSIDAD[1] u otros que cumplen con las medidas de seguridad requeridas por la normativa de la materia; y sean tratados por LA UNIVERSIDAD y/o por personas naturales y/o jurídicas a quienes la misma delegue o encargue; quienes podrán tratar dichos datos con las siguientes finalidades: (i) para la ejecución de la relación con el titular de los datos, (ii) para gestionar su inscripción y participación en los eventos y actividades académicas, de promoción, asociativas, artísticas, culturales, recreativas y deportivas, organizadas por LA UNIVERSIDAD, (iii) Para fines estadísticos, históricos y/o de investigación, (iv) Para gestionar los procesos y/o procedimientos que administre e implemente la UNIVERSIDAD; incluyendo procesos de postulación y admisión, (v) Para cumplir con las exigencias de la normativa de protección al consumidor, (vi) para establecer y/o mantener contacto e informar las actividades propias de LA UNIVERSIDAD, (vii) para la elaboración y difusión de imágenes y material audiovisual informando sobre actividades propias de LA UNIVERSIDAD. 
+    <br> <br>
+    Dejo constancia de haber sido informado de que no proporcionar los datos que se indican en el presente formulario, origina que mi persona no pueda ser contactada por LA UNIVERSIDAD, ni participar en las actividades organizadas por esta.
+    <br> <br>
+    LA UNIVERSIDAD garantiza la posibilidad de ejercer los derechos de acceso, rectificación, cancelación y oposición, así como revocar su consentimiento, cuando procedan, solicitándolo por escrito en la siguiente dirección: Av. Ramón Múgica 131, Urb. San Eduardo, Piura, o al correo electrónico: datospersonalesudep@udep.edu.pe. Asimismo, se puede presentar una reclamación ante la Autoridad Nacional de Protección de Datos Personales en la Mesa de Partes del Ministerio de Justicia y Derechos Humanos: Calle Scipión Llona N° 350, Miraflores, Lima, Perú, de considerar que no se ha atendido adecuadamente el ejercicio de los derechos. Los datos serán almacenados y/o tratados mientras sean necesarios para el cumplimiento de los fines señalados. En consecuencia, por la presente autorizo a LA UNIVERSIDAD a realizar las actividades antes señaladas.
+    <br> <br>__________
+    <br> <br>
+    [1] Banco de Datos de la Oficina de Gestión de Clientes - Campus Piura, con código RNPDP-PJP N° 837.
+    <br> <br>
   </section>
 
   <footer class="footer bg-neutral text-neutral-content p-10 ur-footer">

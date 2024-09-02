@@ -190,7 +190,7 @@ async function submit() {
             <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" required="" v-model="terms" @keyup="reset">
           </div>
           <div class="ml-3 text-sm">
-            <label for="terms" class="font-light text-gray-500">Al registrarme acepto los <a class="font-medium text-primary hover:underline" href="#">Términos y condiciones</a></label>
+            <label for="terms" class="font-light text-gray-500">Al registrarme acepto los <a class="font-medium text-primary hover:underline" href="/terms">Términos y condiciones</a></label>
           </div>
         </div>
 
