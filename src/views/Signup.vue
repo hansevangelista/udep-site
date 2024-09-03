@@ -138,7 +138,7 @@ async function submit() {
         <div class="mb-6 grid grid-cols-2 gap-4">
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Email</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required v-model="email" @keyup="reset"/>
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="nombre@correo.com" required v-model="email" @keyup="reset"/>
           </div>
 
           <div class="col-span-2 sm:col-span-1">
@@ -190,7 +190,7 @@ async function submit() {
             <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" required="" v-model="terms" @keyup="reset">
           </div>
           <div class="ml-3 text-sm">
-            <label for="terms" class="font-light text-gray-500">Al registrarme acepto los <a class="font-medium text-primary hover:underline" href="/terms">Términos y condiciones</a></label>
+            <label for="terms" class="font-light text-gray-500">He leído la <a class="font-medium text-primary hover:underline" href="/terms">política de privacidad y protección de datos personales de la Universidad de Piura</a> y doy mi consentimiento para el almacenamiento y tratamiento de mis datos personales, conforme a dicha política y para las finalidades que en ella se indican</label>
           </div>
         </div>
 

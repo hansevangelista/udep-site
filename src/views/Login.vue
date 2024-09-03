@@ -120,7 +120,7 @@ async function submit() {
         <div class="mb-6 grid grid-cols-2 gap-4">
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Email</label>
-            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="name@flowbite.com" required v-model="email" @keyup="reset"/>
+            <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="nombre@correo.com" required v-model="email" @keyup="reset"/>
           </div>
           <div class="col-span-2 sm:col-span-1">
             <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Password</label>

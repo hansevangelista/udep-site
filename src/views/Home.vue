@@ -41,7 +41,7 @@
         </ul>
       </div>
       <div class="navbar-end">
-        <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">JUGAR</RouterLink>
+        <RouterLink class="btn btn-primary text-xl lg:text-2xl" to="/play">JUGAR</RouterLink>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@
         <p class="py-6" style="color: #F3F4F6;">
           Juega UDEP Race y gana asesorías vacacionales personalizadas*, merchandising oficinal de UDEP ¡Y mucho más!
         </p>
-        <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">Jugar</RouterLink>
+        <RouterLink class="btn btn-primary text-xl lg:text-2xl" to="/play">Jugar</RouterLink>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@
           <p class="py-6">
             Compite contra tu propio tiempo, o con amigos para hacerlo más divertido
           </p>
-          <RouterLink class="btn btn-neutral text-xl lg:text-2xl" to="/play">Jugar Ahora</RouterLink>
+          <RouterLink class="btn btn-primary text-xl lg:text-2xl" to="/play">Jugar Ahora</RouterLink>
         </div>
       </div>
       <div style="background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%); flex: 1;">
