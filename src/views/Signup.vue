@@ -190,7 +190,7 @@ async function submit() {
             <input id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" required="" v-model="terms" @keyup="reset">
           </div>
           <div class="ml-3 text-sm">
-            <label for="terms" class="font-light text-gray-500">He leído la <a class="font-medium text-primary hover:underline" href="/terms">política de privacidad y protección de datos personales de la Universidad de Piura</a> y doy mi consentimiento para el almacenamiento y tratamiento de mis datos personales, conforme a dicha política y para las finalidades que en ella se indican</label>
+            <label for="terms" class="font-light text-gray-500">He leído la <a class="font-medium text-primary underline" href="/terms">política de privacidad y protección de datos personales de la Universidad de Piura</a> y doy mi consentimiento para el almacenamiento y tratamiento de mis datos personales, conforme a dicha política y para las finalidades que en ella se indican</label>
           </div>
         </div>
 
