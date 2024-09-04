@@ -100,7 +100,7 @@ async function submit() {
     </div>
   </div>
 
-  <section class="pt-20 p-4 antialiased md:pt-32 md:p-8 lg:pt-32 lg:p-10" style="background: #E5E7EB;">
+  <section class="pt-20 p-4 antialiased md:pt-32 md:p-8 lg:pt-32 lg:p-10" style="background: #E5E7EB; min-height: 900px;">
 
     <div class="lg:flex">
 
