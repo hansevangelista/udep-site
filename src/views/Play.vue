@@ -152,9 +152,9 @@ function reset() {
                         <input class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500" placeholder="spatial.io/@username" type="email" id="email" required="" v-model="username" @keyup="reset">
                     </div>
                     <div>
-                        <button v-if="!sending" type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary border-primary sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300" @click="submit">Subscribe</button>
+                        <button v-if="!sending" type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary border-primary sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300" @click="submit">Enlazar</button>
 
-                        <button v-if="sending" type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300" disabled style="background: #ccc;">Subscribe</button>
+                        <button v-if="sending" type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300" disabled style="background: #ccc;">Enlazar</button>
                     </div>
                 </div>
                 <div v-if="!user.username" class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">Copia el link de tu username de spatial</div>
