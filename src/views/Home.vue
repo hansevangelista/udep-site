@@ -75,10 +75,10 @@
       <div style="flex: 1;">
         <h1 class="text-5xl font-bold ur-hero2-title" style="color: #F3F4F6;">PARTICIPA POR INCREIBLES PREMIOS</h1>
         <p class="py-6" style="color: #F3F4F6;">
-          Juega UDEP Race y gana asesorías vacacionales personalizadas*, merchandising oficinal de UDEP ¡Y mucho más!
+          Juega UDEP Race y gana asesorías vocacionales personalizadas(*), merchandising oficinal de UDEP ¡Y mucho más!
         </p>
         <small style="color: #F3F4F6;">
-          * comienza tu aventura universitaria de la mano de especialistas. Serán 50 los ganadores.
+          * Comienza tu aventura universitaria de la mano de especialistas. Serán 50 los ganadores.
         </small> <br><br>
         <RouterLink class="btn btn-primary text-xl lg:text-2xl" to="/play">Jugar</RouterLink>
       </div>
