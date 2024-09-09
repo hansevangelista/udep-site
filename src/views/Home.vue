@@ -55,7 +55,7 @@
         </p>
         <img src="@/assets/logo-big.png" class="w-40 py-2 mx-auto md:mx-0 md:w-60 lg:w-80">
         <p class="py-6 text-base md:text-lg" style="color: #F3F4F6;">
-          Conocer la oferta académica de la Universidad de Piura a través de una emocionante carrera de obstáculos.
+          Conoce la oferta académica de la Universidad de Piura a través de una emocionante carrera de obstáculos.
           Participa de una experiencia nueva y gana increibles premios.
         </p>
         <RouterLink class="btn btn-primary text-xl mt-2 lg:text-2xl" to="/play">Jugar Ahora</RouterLink>
