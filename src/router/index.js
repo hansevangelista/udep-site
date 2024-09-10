@@ -4,6 +4,7 @@ import Play from '../views/Play.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
 import Terms from '../views/Terms.vue'
+import Remember from '../views/Remember.vue'
 
 
 const router = createRouter({
@@ -28,6 +29,10 @@ const router = createRouter({
     {
       path: '/terms',
       component: Terms
+    },
+    {
+      path: '/remember',
+      component: Remember
     },
   ]
 })

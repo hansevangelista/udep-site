@@ -6,9 +6,9 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const email = ref(null)
-const password = ref(null)
 
 const error = ref(null)
+const success = ref(null)
 const sending = ref(false)
 
 
@@ -21,16 +21,14 @@ async function submit() {
   console.log('submit ...')
 
   if(!email.value) return error.value = 'ingresa email'
-  if(!password.value) return error.value = 'ingresa password'
 
 
   const data = {
     email: email.value,
-    password: password.value,
   }
   console.log({ data })
 
-  const url = import.meta.env.VITE_SERVER + '/api/login'
+  const url = import.meta.env.VITE_SERVER + '/api/remember'
 
   sending.value = true
 
@@ -48,9 +46,8 @@ async function submit() {
 
   if(res.error) return
 
-  localStorage.setItem("token", res.token)
+  success.value = 'Password enviado'
 
-  router.push('/play')
 }
 </script>
 
@@ -107,39 +104,29 @@ async function submit() {
       <div class="p-4 bg-white md:p-8" style="flex: 1;">
 
         <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl">
-          Ingresa a UDEP Race
+          Recordar contraseña
         </h1>
 
         <p class="text-sm font-light text-gray-500">
-          Todavía no tienes cuenta?
-          <RouterLink to="/signup" class="font-medium text-primary hover:underline">Regístrate aquí</RouterLink>
+          Ya tienes tu contraseña?
+          <RouterLink to="/login" class="font-medium text-primary hover:underline">Ingresar aquí</RouterLink>
         </p>
 
         <br>
 
-        <div class="mb-6 grid grid-cols-2 gap-4">
+        <div class="mb-6 grid grid-cols-1 gap-4">
           <div class="col-span-2 sm:col-span-1">
             <label for="full_name" class="mb-2 block text-sm font-medium text-gray-900">Email</label>
             <input type="text" id="full_name" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="nombre@correo.com" required v-model="email" @keyup="reset"/>
           </div>
-          <div class="col-span-2 sm:col-span-1">
-            <label for="card-number-input" class="mb-2 block text-sm font-medium text-gray-900">Password</label>
-            <input type="password" id="card-number-input" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pe-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500" placeholder="••••••••••" pattern="^4[0-9]{12}(?:[0-9]{3})?$" required v-model="password" @keyup="reset"/>
-          </div>
         </div>
 
         <small style="color: red;" v-if="error">{{ error }} <br><br></small>
+        <small style="color: green;" v-if="success">{{ success }} <br><br></small>
 
-        <button v-if="!sending" type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" @click="submit">Ingresar</button>
+        <button v-if="!sending" type="submit" class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" @click="submit">Recordar</button>
 
-        <button v-if="sending" type="submit" class="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" disabled style="background: #ccc;">Ingresar</button>
-      
-        <br>
-        <p class="text-sm font-light text-gray-500">
-          Olvidaste tu contraseña?
-          <RouterLink to="/remember" class="font-medium text-primary hover:underline">Recordar contraseña</RouterLink>
-        </p> 
-
+        <button v-if="sending" type="submit" class="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" disabled style="background: #ccc;">Recordar</button>
       </div>
 
       <div class="mt-6 grow sm:mt-8 lg:mt-0" style="flex: 1; background: linear-gradient(180deg, #3584E5 0%, #1D497F 100%);">
